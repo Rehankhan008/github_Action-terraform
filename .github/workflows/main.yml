@@ -27,11 +27,11 @@ jobs:
             - name: Initialize Terraform
               run: terraform init
 
-            - name: Validate Terraform
-              run: terraform validate
+            - name: Terraform Plan
+              run: terraform plan -out=tfplan
 
             - name: Terraform Apply
-              run: terraform apply 
+              run: terraform apply -auto-approve tfplan
 
 
 
